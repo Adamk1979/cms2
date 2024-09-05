@@ -2,28 +2,26 @@ import { storyblokEditable } from "@storyblok/react";
 
 const Feature = ({ blok }) => {
   return (
-    <div className="column feature" {...storyblokEditable(blok)}>
-      <div className="p-6">
-        {blok.image && (
-          <img
-            className="object-cover object-center w-full mb-8 lg:h-48 md:h-36 rounded-xl"
-            src={blok.image.filename}
-            alt={blok.name || "feature image"}
-          />
-        )}
-        <h2 className="mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-neutral-600 lg:text-3xl">
-          {blok.name}
-        </h2>
-        <div className="mt-4">
-          <a
-            href="#"
-            className="inline-flex items-center mt-4 font-semibold text-blue-600 lg:mb-0 hover:text-neutral-600"
-            title="read more"
-            aria-label={`Read more about ${blok.name}`}
-          >
-            Read More »
-          </a>
-        </div>
+    <div className="feature p-6">
+      {blok.image && (
+        <img
+          className="w-full h-auto object-contain mb-8 rounded-xl"
+          src={blok.image.filename}
+          alt={blok.name || "feature image"}
+        />
+      )}
+      <h2 className="text-2xl font-semibold text-center text-neutral-600 lg:text-3xl mb-8">
+        {blok.name}
+      </h2>
+      <div className="mt-4 text-center">
+        <a
+          href="#"
+          className="inline-flex items-center font-semibold text-blue-600 hover:text-neutral-600"
+          title="read more"
+          aria-label={`Read more about ${blok.name}`}
+        >
+          Read More »
+        </a>
       </div>
     </div>
   );
