@@ -24,19 +24,21 @@ const Navigation = () => {
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <Link href="/" aria-label="Home">
               <span>
-              <img
-  className="h-32 w-auto sm:h-16 hidden sm:block" // Increased size
-  src="https://i.imgur.com/sx2SkH7.png"
-  alt="Custom logo"
-/>
-<img
-  className="h-32 w-auto sm:h-16 sm:hidden" // Increased size
-  src="https://i.imgur.com/sx2SkH7.png"
-  alt="Custom logo"
-/>
+                <img
+                  className="h-32 w-auto sm:h-16 hidden sm:block" // Increased size for larger screens
+                  src="https://i.imgur.com/sx2SkH7.png"
+                  alt="Custom logo"
+                />
+                <img
+                  className="h-32 w-auto sm:h-16 sm:hidden" // Increased size for mobile
+                  src="https://i.imgur.com/sx2SkH7.png"
+                  alt="Custom logo"
+                />
               </span>
             </Link>
           </div>
+
+          {/* Mobile menu button */}
           <div className="-mr-2 -my-2 md:hidden">
             <button
               type="button"
@@ -62,6 +64,8 @@ const Navigation = () => {
               </svg>
             </button>
           </div>
+
+          {/* Desktop menu */}
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 space-x-10">
             <Link href="/product">
               <a className="text-base font-medium text-gray-500 hover:text-gray-900" aria-label="Product">
@@ -92,8 +96,9 @@ const Navigation = () => {
         </div>
       </div>
 
+      {/* Mobile dropdown menu */}
       {openMenu && (
-        <div className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+        <div className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden z-50">
           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
             <div className="pt-5 pb-6 px-5">
               <div className="flex items-center justify-between">
